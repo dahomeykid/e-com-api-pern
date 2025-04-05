@@ -5,6 +5,9 @@ import cors from "cors";
 import productRoutes from "./routes/product.js";
 import categoryRoutes from "./routes/category.js";
 import orderRoutes from "./routes/order.js";
+import orderItemRoutes from "./routes/orderItem.js";
+import userRoutes from "./routes/user.js";
+import cartRoutes from "./routes/cart.js";
 
 
 config(); // Load environment variables from .env file
@@ -20,6 +23,11 @@ app.use(express.json());
 app.use("/api/products", productRoutes);
 app.use("/api/categories", categoryRoutes);
 app.use("/api/orders", orderRoutes);
+app.use("/api/order-items", orderItemRoutes);
+app.use("/api/users", userRoutes);
+app.use("/api/cart", cartRoutes);
+
+
 
 // Sample route for the root URL
 app.get("/", (req, res) => {
