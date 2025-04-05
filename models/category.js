@@ -1,10 +1,11 @@
-export default (sequelize, DataTypes) => {
-  const Category = sequelize.define("Category", {
+import { DataTypes } from "sequelize";
+import sequelize from "../config/db.js";
+
+
+const Category = sequelize.define("Category", 
+  {
     name: { type: DataTypes.STRING, allowNull: false, unique: true },
     description: { type: DataTypes.TEXT }
   });
-  Category.associate = (models) => {
-    Category.hasMany(models.Product, { foreignKey: "categoryId" });
-  };
-  return Category;
-};
+  
+export default Category;

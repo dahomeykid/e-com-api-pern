@@ -1,22 +1,19 @@
 import express from 'express';
-import {Product} from './models/product.js';
+import { getProducts, createProduct  } from '../controllers/productController.js';
 
 const router = express.Router();
 
-// Create product
-router.post("/", async (req, res) => {
-  try {
-    const product = await Product.create(req.body);
-    res.status(201).json(product);
-  } catch (error) {
-    res.status(400).json({ error: error.message });
-  }
-});
+// All routes in this file are prefixed with api/products
+router.route("/") 
+  .get(getProducts) // Get all products
+  .post(createProduct);
+
+router.route("/:id")
+  .get(getProductById)
+  .put(updateProduct)
+  .delete(deleteProduct); 
 
 // Get all products
-router.get("/", async (req, res) => {
-  const products = await Product.findAll();
-  res.json(products);
-});
+router.get("/categories/:categoryId",getProductsByCategory );
 
 export default router;
