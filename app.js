@@ -2,12 +2,13 @@ import { config } from "dotenv";
 import express from "express";
 import cors from "cors";
 
-import productRoutes from "./routes/product.js";
-import categoryRoutes from "./routes/category.js";
-import orderRoutes from "./routes/order.js";
-import orderItemRoutes from "./routes/orderItem.js";
-import userRoutes from "./routes/user.js";
-import cartRoutes from "./routes/cart.js";
+import productRoutes from "./routes/productRoutes.js";
+import categoryRoutes from "./routes/categoryRoutes.js";
+import orderRoutes from "./routes/orderRoutes.js";
+import orderItemRoutes from "./routes/orderItemRoutes.js";
+import userRoutes from "./routes/userRoutes.js";
+import cartRoutes from "./routes/cartRoutes.js";
+import cartItemRoutes from "./routes/cartItemRoutes.js";
 
 
 config(); // Load environment variables from .env file
@@ -26,6 +27,7 @@ app.use("/api/orders", orderRoutes);
 app.use("/api/order-items", orderItemRoutes);
 app.use("/api/users", userRoutes);
 app.use("/api/cart", cartRoutes);
+app.use("/api/cart-items", cartItemRoutes);
 
 
 
