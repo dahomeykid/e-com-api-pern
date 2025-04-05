@@ -1,6 +1,6 @@
 import asyncHandler from 'express-async-handler';
 import {OrderItem} from '../models/associations.js';
-import { orderItemSchema } from '../validation/orderItemValidation';
+import { orderItemSchema } from '../validation/orderItemValidation.js';
 import {Op} from 'sequelize';
 
 // @desc    Create a new order item

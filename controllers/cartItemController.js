@@ -1,6 +1,6 @@
 import asyncHandler from 'express-async-handler';
 import { Cart, CartItem } from '../models/associations.js';
-import { cartItemSchema } from '../validation/cartItemValidation';
+import { cartItemSchema } from '../validation/cartItemValidation.js';
 //import { Op } from 'sequelize';
 
 // @desc    Get all cart items by cart ID
