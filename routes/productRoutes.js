@@ -1,11 +1,11 @@
 import express from 'express';
-import { getProducts, createProduct  } from '../controllers/productController.js';
+import { createProduct,getProductById, getPaginatedProducts, updateProduct, deleteProduct, getProductsByCategory  } from '../controllers/productController.js';
 
 const router = express.Router();
 
 // All routes in this file are prefixed with api/products
 router.route("/") 
-  .get(getProducts) // Get all products
+  .get(getPaginatedProducts) // Get all products
   .post(createProduct);
 
 router.route("/:id")
